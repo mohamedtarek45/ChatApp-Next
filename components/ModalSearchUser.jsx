@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { IoMdCloseCircle } from "react-icons/io";
-import UserComponet from "./UserComponet";
 import { useStore } from "@/store/storeUser";
 import UserCard from "@/components/UserCard";
 export default function Modal({ isOpen, onClose }) {
@@ -44,9 +43,9 @@ export default function Modal({ isOpen, onClose }) {
       className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center retaltive"
       onClick={handleOverlayClick}
     >
-      <div className="shadow-sm rounded-md w-full max-w-md p-4 bg-slate-200 mx-auto relative flex flex-col">
+      <div className="shadow-sm rounded-md w-full max-w-md p-4 bg-slate-200 dark:bg-ExtraDark mx-auto relative flex flex-col">
         <button
-          className="text-slate-500 hover:text-slate-800 hover:cursor-pointer text-lg absolute top-1 right-4"
+          className="text-slate-500 hover:text-slate-800 dark:text-white hover:cursor-pointer text-lg absolute top-1 right-4"
           onClick={onClose}
         >
           <IoMdCloseCircle size={25} />

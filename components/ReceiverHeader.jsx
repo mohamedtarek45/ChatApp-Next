@@ -17,7 +17,7 @@ const ReceiverHeader = ({ reciver }) => {
 
   const isOnline = onlineUsers.includes(reciver._id);
   return (
-    <header className="h-15 sticky top-0 bg-slate-300 dark:bg-ExtraDark flex items-center">
+    <header className="h-15 sticky top-0 bg-slate-300 dark:bg-ExtraDark flex items-center z-50">
       <Link href="/home" className="block sm:hidden pl-1 ">
         <IoChevronBackOutline size={25} />
       </Link>
