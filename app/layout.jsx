@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import  EnableServer  from "@/components/EnableServer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +20,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <EnableServer />
+        <ThemeProvider attribute="class" defaultTheme="system">
+          <div id="myportal" />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
