@@ -64,7 +64,7 @@ const Conversations = () => {
           const userInfo = await getUsersById(otherUserId);
           return {
             ...userInfo,
-            seen: con.sender === user.id ? true : con.seen,
+            seen: con.MessageSender === user.id ? true : con.seen,
             lastMessage: con.lastMessage,
           };
         })
