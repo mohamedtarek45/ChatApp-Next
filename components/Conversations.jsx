@@ -23,11 +23,6 @@ const Conversations = () => {
 
       for (const u of users) {
         if (u.id === data.sender || u.id === data.reciver) {
-          console.log("data.sender" ,data.sender );
-          console.log("user.id" ,user.id );
-          console.log("reciverId" ,reciverId );
-          console.log("data.seen" ,data.seen );
-          console.log("data.sender === user.id || data.sender === reciverId || data.seen", data.sender === user.id || data.sender === reciverId || data.seen);
           updatedUser = {
             ...u,
             lastMessage: data.text || (data.url ? data.type : ""),
@@ -66,10 +61,6 @@ const Conversations = () => {
         conversations.map(async (con) => {
           const otherUserId =
             con.sender === user.id ? con.receiver : con.sender;
-            console.log("user.id",user.id);
-            console.log("con.receiver",con.receiver);
-            console.log("con.sender",con.sender);
-            console.log("otherUserId",otherUserId);
           const userInfo = await getUsersById(otherUserId);
           return {
             ...userInfo,
@@ -83,7 +74,6 @@ const Conversations = () => {
     };
     loadAll();
   }, [user?.id]);
-  console.log("users",users);
   if (loading) {
     return (
       <div className=" w-full flex-1 flex justify-center items-center">
